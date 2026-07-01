@@ -1,0 +1,1 @@
+document.getElementById("lang").onclick=()=>alert("سيتم إضافة العربية/English بالكامل في الإصدار التالي");
