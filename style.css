@@ -1,165 +1,85 @@
-:root{
-  --bg:#0b0b0b;
-  --card:#161616;
-  --gold:#D4AF37;
-  --text:#f5f5f5;
-  --muted:#b8b8b8;
-}
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
 
-*{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
-}
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-body{
-  font-family:Arial, sans-serif;
-  background:var(--bg);
-  color:var(--text);
-  line-height:1.7;
-}
+<title>تواصل | Bassam Fawzy Photography</title>
 
-/* ===== HEADER ===== */
-.top{
-  position:sticky;
-  top:0;
-  z-index:1000;
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  padding:18px 40px;
-  background:rgba(0,0,0,0.9);
-  border-bottom:1px solid #222;
-}
+<link rel="stylesheet" href="CSS/style.css">
+</head>
 
-.logo{
-  font-size:1.4rem;
-  font-weight:bold;
-  color:var(--gold);
-}
+<body>
 
-.logo span{
-  color:#fff;
-}
+<!-- ===== HEADER ===== -->
+<header class="top">
 
-nav a{
-  color:#fff;
-  text-decoration:none;
-  margin:0 10px;
-  transition:0.3s;
-}
+<div class="logo">
+Bassam Fawzy <span>Photography</span>
+</div>
 
-nav a:hover{
-  color:var(--gold);
-}
+<nav>
+<a href="index.html">الرئيسية</a>
+<a href="portfolio.html">أعمالي</a>
+<a href="services.html">الخدمات</a>
+<a href="about.html">من أنا</a>
+<a href="contact.html">تواصل</a>
+</nav>
 
-/* ===== HERO ===== */
-.hero{
-  min-height:90vh;
-  display:flex;
-  flex-direction:column;
-  justify-content:center;
-  align-items:center;
-  text-align:center;
-  padding:20px;
-  background:radial-gradient(circle at center, rgba(212,175,55,0.1), transparent 60%);
-}
+</header>
 
-.hero h1{
-  font-size:4rem;
-  color:var(--gold);
-  letter-spacing:2px;
-}
+<!-- ===== HERO ===== -->
+<section class="hero">
 
-.hero h2{
-  font-size:1.5rem;
-  margin:10px 0;
-  font-weight:normal;
-}
+<h1>تواصل معي</h1>
+<h2>احجز جلسة أو استفسر عن الخدمات</h2>
 
-.hero p{
-  color:var(--muted);
-  margin-bottom:20px;
-}
+<p>أنا جاهز للرد عليك في أي وقت</p>
 
-/* ===== BUTTON ===== */
-.btn{
-  display:inline-block;
-  padding:12px 25px;
-  background:var(--gold);
-  color:#000;
-  font-weight:bold;
-  text-decoration:none;
-  border-radius:8px;
-  transition:0.3s;
-}
+</section>
 
-.btn:hover{
-  transform:translateY(-3px);
-}
+<!-- ===== CONTACT OPTIONS ===== -->
+<section>
 
-/* ===== SECTIONS ===== */
-section{
-  padding:70px 10%;
-}
+<div class="grid">
 
-h2{
-  color:var(--gold);
-  margin-bottom:30px;
-  text-align:center;
-}
+<div class="card">
+📱 واتساب
+<br><br>
+<a class="btn" href="https://wa.me/201000000000" target="_blank">تواصل واتساب</a>
+</div>
 
-/* ===== GRID / CARDS ===== */
-.grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-  gap:20px;
-}
+<div class="card">
+📘 فيسبوك
+<br><br>
+<a class="btn" href="#">زيارة الصفحة</a>
+</div>
 
-.card{
-  background:var(--card);
-  padding:30px;
-  text-align:center;
-  border-radius:12px;
-  border:1px solid rgba(212,175,55,0.2);
-  transition:0.4s;
-  cursor:pointer;
-}
+<div class="card">
+📸 إنستجرام
+<br><br>
+<a class="btn" href="#">زيارة الحساب</a>
+</div>
 
-.card:hover{
-  transform:translateY(-8px);
-  border-color:var(--gold);
-  box-shadow:0 0 20px rgba(212,175,55,0.2);
-}
+<div class="card">
+📧 البريد الإلكتروني
+<br><br>
+<p>example@email.com</p>
+</div>
 
-/* ===== CONTACT SECTION ===== */
-.contact-home{
-  text-align:center;
-  background:linear-gradient(135deg, rgba(212,175,55,0.08), transparent);
-}
+</div>
 
-/* ===== FOOTER ===== */
-footer{
-  text-align:center;
-  padding:25px;
-  border-top:1px solid #222;
-  color:#888;
-}
+</section>
 
-/* ===== RESPONSIVE ===== */
-@media(max-width:768px){
+<!-- ===== FOOTER ===== -->
+<footer>
 
-  .hero h1{
-    font-size:2.5rem;
-  }
+© 2026 Bassam Fawzy Photography
 
-  .top{
-    flex-direction:column;
-    gap:10px;
-  }
+</footer>
 
-  nav a{
-    font-size:14px;
-  }
+<script src="JavaScript/main.js"></script>
 
-}
+</body>
+</html>
