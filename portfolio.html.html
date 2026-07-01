@@ -1,0 +1,75 @@
+document.addEventListener("DOMContentLoaded", function () {
+
+  // ===== تغيير شكل الهيدر عند التمرير =====
+  const header = document.querySelector(".top");
+
+  window.addEventListener("scroll", function () {
+    if (window.scrollY > 80) {
+      header.style.background = "rgba(0,0,0,0.98)";
+      header.style.boxShadow = "0 0 20px rgba(212,175,55,0.15)";
+    } else {
+      header.style.background = "rgba(0,0,0,0.9)";
+      header.style.boxShadow = "none";
+    }
+  });
+
+  // ===== زر العودة للأعلى =====
+  const btn = document.createElement("button");
+  btn.innerHTML = "↑";
+  btn.id = "backToTop";
+
+  document.body.appendChild(btn);
+
+  Object.assign(btn.style, {
+    position: "fixed",
+    bottom: "20px",
+    left: "20px",
+    width: "45px",
+    height: "45px",
+    borderRadius: "50%",
+    border: "none",
+    background: "#D4AF37",
+    color: "#000",
+    fontSize: "22px",
+    cursor: "pointer",
+    display: "none",
+    zIndex: "9999"
+  });
+
+  window.addEventListener("scroll", function () {
+    if (window.scrollY > 300) {
+      btn.style.display = "block";
+    } else {
+      btn.style.display = "none";
+    }
+  });
+
+  btn.addEventListener("click", function () {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth"
+    });
+  });
+
+  // ===== ظهور العناصر أثناء التمرير =====
+  const elements = document.querySelectorAll("section, .card");
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.style.opacity = "1";
+        entry.target.style.transform = "translateY(0)";
+      }
+    });
+  }, {
+    threshold: 0.15
+  });
+
+  elements.forEach(el => {
+    el.style.opacity = "0";
+    el.style.transform = "translateY(40px)";
+    el.style.transition = "all 0.7s ease";
+    observer.observe(el);
+  });
+
+});

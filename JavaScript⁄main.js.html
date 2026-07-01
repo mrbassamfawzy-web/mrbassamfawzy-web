@@ -1,0 +1,94 @@
+// =============================
+// Bassam Fawzy Photography
+// Main JavaScript
+// =============================
+
+document.addEventListener("DOMContentLoaded", function () {
+
+    // تغيير شكل شريط التنقل عند النزول
+    const header = document.querySelector(".top");
+
+    window.addEventListener("scroll", function () {
+
+        if (window.scrollY > 80) {
+            header.classList.add("scrolled");
+        } else {
+            header.classList.remove("scrolled");
+        }
+
+    });
+
+    // زر العودة للأعلى
+    const backToTop = document.createElement("button");
+
+    backToTop.innerHTML = "↑";
+
+    backToTop.id = "backToTop";
+
+    document.body.appendChild(backToTop);
+
+    backToTop.style.display = "none";
+
+    window.addEventListener("scroll", function () {
+
+        if (window.scrollY > 300) {
+
+            backToTop.style.display = "block";
+
+        } else {
+
+            backToTop.style.display = "none";
+
+        }
+
+    });
+
+    backToTop.onclick = function () {
+
+        window.scrollTo({
+
+            top: 0,
+
+            behavior: "smooth"
+
+        });
+
+    };
+
+    // ظهور العناصر أثناء التمرير
+
+    const sections = document.querySelectorAll("section");
+
+    const observer = new IntersectionObserver(function(entries){
+
+        entries.forEach(function(entry){
+
+            if(entry.isIntersecting){
+
+                entry.target.style.opacity="1";
+
+                entry.target.style.transform="translateY(0)";
+
+            }
+
+        });
+
+    },{
+
+        threshold:0.2
+
+    });
+
+    sections.forEach(function(section){
+
+        section.style.opacity="0";
+
+        section.style.transform="translateY(50px)";
+
+        section.style.transition="all .8s ease";
+
+        observer.observe(section);
+
+    });
+
+});
